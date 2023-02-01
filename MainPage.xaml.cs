@@ -1,4 +1,5 @@
 ﻿using ExamenProAlberto.Models;
+using ExamenProAlberto.ViewModels;
 using Newtonsoft.Json;
 using System.Net;
 
@@ -10,7 +11,8 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+        BindingContext = new MainPageViewModel();
+    }
 
     public async void Button_Clicked(object sender, EventArgs e)
     {
@@ -23,6 +25,8 @@ public partial class MainPage : ContentPage
         request.Headers.Add("Accept", "application/json");
 
         var client = new HttpClient();
+
+
 
         HttpResponseMessage response = await client.SendAsync(request);
         if (response.StatusCode == HttpStatusCode.OK)

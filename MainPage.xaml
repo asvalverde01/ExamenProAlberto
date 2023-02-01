@@ -14,7 +14,7 @@
         <Button Text="Llamar API" Clicked="Button_Clicked" />
         <Button Text="Historial" Clicked="Button_Clicked_Historial" />
 
-        <ListView x:Name="ListaDemo">
+        <ListView x:Name="ListaDemo" ItemsSource="{Binding MovieList}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -28,6 +28,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
     </StackLayout>
+
     
+
+
 </ContentPage>
